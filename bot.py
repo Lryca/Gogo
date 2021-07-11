@@ -386,21 +386,21 @@ class chatbot(discord.Client):
              channel = message.channel
              num=random.randint(1,3)
              if num==1:
-                 asw="몰라요. 요즘 좀 컷다고 오빠한테 말도 안해뇨"
+                 asw="몰라요. 요즘 좀 컷다고 오빠한테 말도 안해요"
                  await channel.send(asw)
                  return None
              if num==2:
-                 asw="낚시하고 있어뇨"
+                 asw="낚시하고 있어요"
                  await channel.send(asw)
                  return None
              if num==3:
-                 asw="운세 보고있어뇨"
+                 asw="잠자리채를 휘두르고 있어요"
                  await channel.send(asw)
                  return None
 
         if message.content == "고고야 리리가 누구야?":
              channel = message.channel
-             asw="오빠한테 까부는 말썽꾸러기 동생이에뇨. 어렸을 땐 귀여웠는데뇨......."
+             asw="오빠한테 까부는 말썽꾸러기 동생이에요. 어렸을 땐 귀여웠는데요......."
              await channel.send(asw)
              return None
 
