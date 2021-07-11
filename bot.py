@@ -228,10 +228,6 @@ class chatbot(discord.Client):
                 asw="그걸 이제 아셨군요!"
                 await channel.send(asw)
                 return None
-            if num==4:
-                asw="제가 주인님을 좀 닮았어요ㅎ"
-                await channel.send(asw)
-                return None
 
         if message.content == "고고야 미안해":
             channel = message.channel
