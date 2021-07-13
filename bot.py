@@ -22,7 +22,7 @@ class chatbot(discord.Client):
 
 
     # 봇에 메시지가 오면 수행 될 액션
-    async def on_message(self, message):
+    async def on_message(self, message, user):
         # SENDER가 BOT일 경우 반응을 하지 않도록 한다.
         if message.author.bot:
             return None
@@ -209,8 +209,7 @@ class chatbot(discord.Client):
 
         if message.content == "고고야 칭찬" or message.content == "고고야 나 잘했지?":
              channel = message.channel
-             asw="참 잘했어요냥!"
-             await channel.send(asw)
+             await channel.send(user.name+"님, 참 잘했어요!")
              return None
 
         if message.content == "고고야 귀여워"or message.content == "고고 귀여워":
@@ -227,6 +226,10 @@ class chatbot(discord.Client):
             if num==3:
                 asw="그걸 이제 아셨군요!"
                 await channel.send(asw)
+                return None
+            if num==4:
+                msg = await message.channel.send("❤️ 을 반응으로 추가")
+                await msg.add_reaction("❤️")
                 return None
 
         if message.content == "고고야 미안해":
@@ -288,7 +291,7 @@ class chatbot(discord.Client):
                 asw="리리가 한가해 보이던데요?"
                 await channel.send(asw)
                 return None
-            if new==7:
+            if num==7:
                 asw="유유가 할 짓이 없대요."
                 await channel.send(asw)
                 return None
@@ -344,7 +347,7 @@ class chatbot(discord.Client):
             
         if message.content == "고고야 사랑해":
             channel = message.channel
-            num=random.randint(1,3)
+            num=random.randint(1,5)
             if num==1:
                 asw="저도 사랑해요냥"
                 await channel.send(asw)
@@ -357,6 +360,14 @@ class chatbot(discord.Client):
                 asw="고등어 주면 저도 사랑할수도.."
                 await channel.send(asw)
                 return None
+            if num==4:
+                asw="(살짝 거리를 둔다.)"
+                await channel.send(asw)
+                return None
+            if num==5:
+                await channel.send("저도 "+user.name+"님을 사랑해요")
+                return None
+
 
         if message.content == "야":
              channel = message.channel
@@ -401,6 +412,12 @@ class chatbot(discord.Client):
         if message.content == "고고야 리리가 누구야?":
              channel = message.channel
              asw="오빠한테 까부는 말썽꾸러기 동생이에요. 어렸을 땐 귀여웠는데요......."
+             await channel.send(asw)
+             return None
+
+        if message.content == "고고야 유유가 누구야?":
+             channel = message.channel
+             asw="맨날 책만 보는 못말리는 남동생이에요... 최근에는 추리물에 빠진 것 같아요"
              await channel.send(asw)
              return None
 
