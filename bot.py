@@ -10,7 +10,7 @@ class chatbot(discord.Client):
     async def on_ready(self):
         # 상태 메시지 설정
         # 종류는 3가지: Game, Streaming, CustomActivity
-        game = discord.Game("노래")
+        game = discord.Game("산책")
 
         # 계정 상태를 변경한다.
         # 온라인 상태, game 중으로 설정
