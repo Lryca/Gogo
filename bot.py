@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from discord.ext.commands import Bot
 import random
 import asyncio
 import os
@@ -10,7 +11,7 @@ class chatbot(discord.Client):
     async def on_ready(self):
         # 상태 메시지 설정
         # 종류는 3가지: Game, Streaming, CustomActivity
-        game = discord.Game("쇼핑")
+        game = discord.Game("행복")
 
         # 계정 상태를 변경한다.
         # 온라인 상태, game 중으로 설정
@@ -22,7 +23,7 @@ class chatbot(discord.Client):
 
 
     # 봇에 메시지가 오면 수행 될 액션
-    async def on_message(self, message, user):
+    async def on_message(message):
         # SENDER가 BOT일 경우 반응을 하지 않도록 한다.
         if message.author.bot:
             return None
@@ -209,7 +210,7 @@ class chatbot(discord.Client):
 
         if message.content == "고고야 칭찬" or message.content == "고고야 나 잘했지?":
              channel = message.channel
-             await channel.send(user.name+"님, 참 잘했어요!")
+             await channel.send(" 참 잘했어요!")
              return None
 
         if message.content == "고고야 귀여워"or message.content == "고고 귀여워":
@@ -228,8 +229,7 @@ class chatbot(discord.Client):
                 await channel.send(asw)
                 return None
             if num==4:
-                msg = await message.channel.send("❤️ 을 반응으로 추가")
-                await msg.add_reaction("❤️")
+                await message.add_reaction("❤️")
                 return None
 
         if message.content == "고고야 미안해":
@@ -365,7 +365,7 @@ class chatbot(discord.Client):
                 await channel.send(asw)
                 return None
             if num==5:
-                await channel.send("저도 "+user.name+"님을 사랑해요")
+                await channel.send("조금 사랑해요")
                 return None
 
 
@@ -720,10 +720,6 @@ class chatbot(discord.Client):
                 else:
                     await message.channel.send("보!")
                     await message.channel.send("비겼다냥")
-
-
-
-
 
 
 
