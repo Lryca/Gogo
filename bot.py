@@ -113,12 +113,6 @@ class chatbot(discord.Client):
              await channel.send(asw)
              return None
 
-        if message.content == "고고야 집사가 누구야?":
-             channel = message.channel
-             asw="위대하신 ㅎㅋ님이다 냥"
-             await channel.send(asw)
-             return None
-
         if message.content == "고고야 고등어":
              channel = message.channel
              asw="저..전 그런걸로 안넘어가요!!"
