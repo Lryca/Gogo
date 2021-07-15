@@ -209,7 +209,7 @@ class chatbot(discord.Client):
 
         if message.content == "고고야 귀여워"or message.content == "고고 귀여워":
             channel = message.channel
-            num=random.randint(1,4)
+            num=random.randint(1,3)
             if num==1:
                 asw="그걸 말하는 당신이 더 귀여울지도 몰라요"
                 await channel.send(asw)
@@ -221,9 +221,6 @@ class chatbot(discord.Client):
             if num==3:
                 asw="그걸 이제 아셨군요!"
                 await channel.send(asw)
-                return None
-            if num==4:
-                await channel.add_reaction("❤️")
                 return None
 
         if message.content == "고고야 미안해":
