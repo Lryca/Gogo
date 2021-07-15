@@ -11,7 +11,7 @@ class chatbot(discord.Client):
     async def on_ready(self):
         # 상태 메시지 설정
         # 종류는 3가지: Game, Streaming, CustomActivity
-        game = discord.Game("닌텐도")
+        game = discord.Game("노래")
 
         # 계정 상태를 변경한다.
         # 온라인 상태, game 중으로 설정
@@ -23,7 +23,7 @@ class chatbot(discord.Client):
 
 
     # 봇에 메시지가 오면 수행 될 액션
-    async def on_message(message):
+    async def on_message(self, message):
         # SENDER가 BOT일 경우 반응을 하지 않도록 한다.
         if message.author.bot:
             return None
@@ -209,7 +209,7 @@ class chatbot(discord.Client):
 
         if message.content == "고고야 귀여워"or message.content == "고고 귀여워":
             channel = message.channel
-            num=random.randint(1,3)
+            num=random.randint(1,4)
             if num==1:
                 asw="그걸 말하는 당신이 더 귀여울지도 몰라요"
                 await channel.send(asw)
@@ -221,6 +221,9 @@ class chatbot(discord.Client):
             if num==3:
                 asw="그걸 이제 아셨군요!"
                 await channel.send(asw)
+                return None
+            if num==4:
+                await channel.add_reaction("❤️")
                 return None
 
         if message.content == "고고야 미안해":
