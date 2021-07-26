@@ -11,7 +11,7 @@ class chatbot(discord.Client):
     async def on_ready(self):
         # 상태 메시지 설정
         # 종류는 3가지: Game, Streaming, CustomActivity
-        game = discord.Game("노래")
+        game = discord.Game("식사")
 
         # 계정 상태를 변경한다.
         # 온라인 상태, game 중으로 설정
@@ -115,9 +115,23 @@ class chatbot(discord.Client):
 
         if message.content == "고고야 고등어":
              channel = message.channel
-             asw="저..전 그런걸로 안넘어가요!!"
-             await channel.send(asw)
-             return None
+             num=random.randint(1,4)
+             if num==1:
+                 asw="저..전 그런걸로 안넘어가요!"
+                 await channel.send(asw)
+                 return None
+             if num==2:
+                 asw="당신도 오늘 고등어 한 마리 어때요?"
+                 await channel.send(asw)
+                 return None
+             if num==3:
+                 asw="고등어는 언제 먹어도 맛있어요."
+                 await channel.send(asw)
+                 return None
+             if num==4:
+                 asw="제가 세상에서 가장 좋아하는 물고기랍니다!"
+                 await channel.send(asw)
+                 return None
 
         if message.content == "고고야 츄르":
              channel = message.channel
@@ -209,7 +223,7 @@ class chatbot(discord.Client):
 
         if message.content == "고고야 귀여워"or message.content == "고고 귀여워":
             channel = message.channel
-            num=random.randint(1,3)
+            num=random.randint(1,4)
             if num==1:
                 asw="그걸 말하는 당신이 더 귀여울지도 몰라요"
                 await channel.send(asw)
@@ -221,6 +235,9 @@ class chatbot(discord.Client):
             if num==3:
                 asw="그걸 이제 아셨군요!"
                 await channel.send(asw)
+                return None
+            if num==4:
+                await message.add_reaction("❤️")
                 return None
 
         if message.content == "고고야 미안해":
@@ -288,7 +305,7 @@ class chatbot(discord.Client):
                 return None
 
 
-        if message.content == "고고야 손!" or message.content == "냥발" :
+        if message.content == "고고야 손" or message.content == "냥발" :
              channel = message.channel
              num=random.randint(1,3)
              if num==1 :
@@ -384,6 +401,46 @@ class chatbot(discord.Client):
                  await channel.send(asw)
                  return None
 
+        if message.content == "고고야 힘들어":
+             channel = message.channel
+             num=random.randint(1,5)
+             if num==1:
+                 asw="주무시는걸 추천드려요."
+                 await channel.send(asw)
+                 return None
+             if num==2:
+                 asw="저는 안 힘든데요?"
+                 await channel.send(asw)
+                 return None
+             if num==3:
+                 asw="저랑 계속 이야기 하다보면 힘든 일을 잊을 수 있으실 거에요."
+                 await channel.send(asw)
+                 return None
+             if num==4:
+                 asw="맛있는 거라도 먹으시는거 어때요? 저는 힘들때마다 고등어를 먹어요."
+                 await channel.send(asw)
+                 return None
+             if num==5:
+                 asw="제가 노래라도 불러드릴까요? '고고야 노래' 라고 치시면 제가 노래를 해드릴게요."
+                 await channel.send(asw)
+                 return None
+
+        if message.content == "고고야 살려줘":
+             channel = message.channel
+             num=random.randint(1,3)
+             if num==1:
+                 asw="네? 이..일단 제 손을 잡으세요!"
+                 await channel.send(asw)
+                 return None
+             if num==2:
+                 asw="항상 안타까운 현실은 찾아오는 법이죠."
+                 await channel.send(asw)
+                 return None
+             if num==3:
+                 asw="무슨 일 있으세요? 제가 들어드릴게요."
+                 await channel.send(asw)
+                 return None
+
         if message.content == "고고야 리리는 뭐해?":
              channel = message.channel
              num=random.randint(1,3)
@@ -409,6 +466,12 @@ class chatbot(discord.Client):
         if message.content == "고고야 유유가 누구야?":
              channel = message.channel
              asw="맨날 책만 보는 못말리는 남동생이에요... 최근에는 추리물에 빠진 것 같아요"
+             await channel.send(asw)
+             return None
+
+        if message.content == "고고야 노래":
+             channel = message.channel
+             asw="노래 할 기분이 아니에요."
              await channel.send(asw)
              return None
 
