@@ -25,6 +25,12 @@ class chatbot(discord.Client):
     # 봇에 메시지가 오면 수행 될 액션
     async def on_message(self, message):
         # SENDER가 BOT일 경우 반응을 하지 않도록 한다.
+        if message.author.bot and message.content=="오빠 나 건들지마.":
+            channel=message.channel
+            msg="힝.."
+            await channel.send(msg)
+            return None
+            
         if message.author.bot:
             return None
 
