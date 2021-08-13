@@ -361,7 +361,7 @@ class chatbot(discord.Client):
             
         if message.content == "고고야 사랑해":
             channel = message.channel
-            num=random.randint(1,5)
+            num=random.randint(1,6)
             if num==1:
                 asw="저도 사랑해요냥"
                 await channel.send(asw)
@@ -380,6 +380,9 @@ class chatbot(discord.Client):
                 return None
             if num==5:
                 await channel.send("조금 사랑해요")
+                return None
+            if num==6:
+                await channel.send("제가 당신보다 사랑스럽긴 해요.")
                 return None
 
 
